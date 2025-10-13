@@ -45,6 +45,8 @@ enum Error {
     E_SUBPROC_GROUP_FAIL,
     /* none */
     E_PROJECT_SOURCES_NOT_EXIST,
+    /* none */
+    E_RAYLIB_MISSING,
     /* %s - dst path */
     /* %s - src path */
     E_MOVE_FILE,
@@ -769,6 +771,10 @@ int raylib_push( const char* obj_dir, const char* path, Opt* opt ) {
 int build_raylib( Opt* opt, const char* override_obj_dir ) {
     int error = E_NONE;
 
+    if( !path_exists( "raylib" ) ) {
+        return error = err( E_RAYLIB_MISSING );
+    }
+
     const char* target_dir = get_target_dir( opt->target );
     const char* obj_dir    = get_target_obj_dir( opt->target );
 
@@ -1435,6 +1441,9 @@ int err_va( int code, va_list va ) {
         } break;
         case E_PROJECT_SOURCES_NOT_EXIST: {
             CB_ERROR( "src/sources.c or src/sources.cpp not found!" );
+        } break;
+        case E_RAYLIB_MISSING: {
+            CB_ERROR( "raylib was not found! use: git submodule add https://github.com/raysan5/raylib.git" );
         } break;
         case E_MOVE_FILE: {
             const char* dst = va_arg( va, const char* );
