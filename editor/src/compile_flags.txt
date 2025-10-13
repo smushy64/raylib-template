@@ -1,0 +1,4 @@
+-I../include
+-I../../raylib/src
+-I../../vendor/include
+-I../../include

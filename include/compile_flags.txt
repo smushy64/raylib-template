@@ -1,0 +1,3 @@
+-I.
+-I../raylib/src
+-I../vendor/include
