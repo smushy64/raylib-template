@@ -1434,8 +1434,8 @@ int err_va( int code, va_list va ) {
         } break;
         case E_SUBPROC_GROUP_FAIL: {
             for( size_t i = 0; i < PROC.len; ++i ) {
-                if( PROC.ptr[i].result > 0 ) {
-                    CB_ERROR( "proc %zu failed with exit code %d!", i, PROC.ptr[i].result );
+                if( PROC.ptr[i].exit_code > 0 ) {
+                    CB_ERROR( "proc %zu failed with exit code %d!", i, PROC.ptr[i].exit_code );
                 }
             }
         } break;
