@@ -7,3 +7,9 @@
 [submodule "extern/cb"]
 	path = extern/cb
 	url = https://github.com/smushy64/cb.git
+[submodule "ini-parser"]
+	path = ini-parser
+	url = https://github.com/smushy64/ini-parser.git
+[submodule "extern/ini-parser"]
+	path = extern/ini-parser
+	url = https://github.com/smushy64/ini-parser.git

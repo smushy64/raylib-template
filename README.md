@@ -19,7 +19,6 @@ Template for Raylib 6.0 projects.
     - [System Dependencies: POSIX](#system-dependencies-posix)
     - [System Dependencies: WASM](#system-dependencies-wasm)
 
-
 ## Usage
 
 - Clone Repository
@@ -143,9 +142,10 @@ Print help.
 │   ├── wasm/    - WASM builds.
 │   └── build/   - Build system files.
 ├── extern/ - where external dependencies live
-│   ├── cb/       - Build system.
-│   ├── flagship/ - Flag parsing library for build system & project.
-│   └── raylib/   - Raylib
+│   ├── cb/         - Build system.
+│   ├── flagship/   - Flag parsing library for build system & project.
+│   ├── ini-parser/ - Flag parsing library for build system & project.
+│   └── raylib/     - Raylib.
 ├── template/ - Template files for generating files. Do not edit directly.
 ├── vendor/ - Where external dependencies should go.
 │   ├── include/ - External dependency headers. Each dependency should be placed in its own dir.
@@ -164,9 +164,10 @@ Print help.
 
 ## External Dependencies
 
-- [Raylib](https://www.raylib.com)                 : Game-development framework.
-- [cb](https://github.com/smushy64/cb)             : My own C build system.
-- [flagship](https://github.com/smushy64/flagship) : My own flag-parsing C library.
+- [Raylib](https://www.raylib.com)                     : Game-development framework.
+- [cb](https://github.com/smushy64/cb)                 : My own C build system.
+- [flagship](https://github.com/smushy64/flagship)     : My own flag-parsing C library.
+- [ini-parser](https://github.com/smushy64/ini-parser) : My own .ini parsing C library.
 
 ## System Dependencies
 
@@ -195,5 +196,5 @@ Print help.
 - `clang` : For building binaries.
 
 [^raylib_version]: Raylib is pinned to version 6.0
-[^build_args]:   The flag `-c` can be passed to build system to create a C project instead of C++. See [build system](#build-system) for more flags.
+[^build_args]:     The flag `-c` can be passed to build system to create a C project instead of C++. See [build system](#build-system) for more flags.
 
