@@ -1,3 +1,9 @@
 [submodule "extern/raylib"]
 	path = extern/raylib
 	url = https://github.com/raysan5/raylib.git
+[submodule "extern/flagship"]
+	path = extern/flagship
+	url = https://github.com/smushy64/flagship.git
+[submodule "extern/cb"]
+	path = extern/cb
+	url = https://github.com/smushy64/cb.git
