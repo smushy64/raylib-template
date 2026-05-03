@@ -1,6 +1,11 @@
-*.sh
-*.md
+**/*.sh
+**/*.md
+**/*.bat
+**/node
+!/build.sh
+!/buidl.bat
 !/README.md
+**/extern/*
 **/raylib/cmake
 **/raylib/examples
 **/raylib/logo
