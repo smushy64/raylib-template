@@ -3,7 +3,9 @@
 **/*.bat
 **/node
 !/build.sh
-!/buidl.bat
+!/clean.sh
+!/build.bat
+!/clean.bat
 !/README.md
 **/extern/*
 **/raylib/cmake

@@ -91,7 +91,7 @@ Build project.
 | `-s`            | Strip debug symbols.                                                             |
 | `-o`            | Build with appropriate optimizations.                                            |
 | `-cfg <cfg>`    | Ignore config file and use passed in string as config file.                      |
-| `-cfgf <path>`  | Change default config file path. Default: `./cfg.ini` Valid: `<path>, 0 (stdin)` |
+| `-cfgp <path>`  | Change default config file path. Default: `./cfg.ini` Valid: `<path>, 0 (stdin)` |
 | `-d`            | Dry run. Doesn't build but prints all the commands it was going to run.          |
 | `-h`            | Stops parsing flags and prints help for this mode.                               |
 
@@ -107,7 +107,7 @@ Build project and run.
 | `-s`            | Strip debug symbols.                                                             |
 | `-o`            | Build with appropriate optimizations.                                            |
 | `-cfg <cfg>`    | Ignore config file and use passed in string as config file.                      |
-| `-cfgf <path>`  | Change default config file path. Default: `./cfg.ini` Valid: `<path>, 0 (stdin)` |
+| `-cfgp <path>`  | Change default config file path. Default: `./cfg.ini` Valid: `<path>, 0 (stdin)` |
 | `--`            | Stop parsing flags and pass remaining to project.                                |
 | `-d`            | Dry run. Doesn't build & run but prints all the commands it was going to run.    |
 | `-h`            | Stops parsing flags and prints help for this mode.                               |
@@ -120,7 +120,7 @@ Build in release mode and package.
 | --------------- | -------------------------------------------------------------------------------- |
 | `-t <platform>` | Set target platform. Valid: `linux, windows, wasm, native` Default: `native`     |
 | `-cfg <cfg>`    | Ignore config file and use passed in string as config file.                      |
-| `-cfgf <path>`  | Change default config file path. Default: `./cfg.ini` Valid: `<path>, 0 (stdin)` |
+| `-cfgp <path>`  | Change default config file path. Default: `./cfg.ini` Valid: `<path>, 0 (stdin)` |
 | `-nr`           | Don't package optional `resources/` directory.                                   |
 | `-d`            | Dry run. Doesn't package but prints all the commands it was going to run.        |
 | `-h`            | Stops parsing flags and prints help for this mode.                               |
