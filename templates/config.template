@@ -1,0 +1,7 @@
+# configuration for raylib-template build system
+[project]
+name=$(project-name)
+width=$(project-width)
+height=$(project-height)
+framerate=$(project-framerate)
+

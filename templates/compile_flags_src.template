@@ -1,0 +1,13 @@
+$(compiler)
+--std=$(compiler-version)
+-I../include
+-I../vendor/include
+-I../extern/cb
+-I../extern/flagship
+-I../extern/ini-parser
+-I../extern/raylib/src
+-DRL_PROJECT_TARGET_ALL
+-DRL_PROJECT_NAME=$(project-name)
+-DRL_PROJECT_WIDTH=$(project-width)
+-DRL_PROJECT_HEIGHT=$(project-height)
+-DRL_PROJECT_FRAMERATE=$(project-framerate)
