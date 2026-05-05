@@ -75,6 +75,10 @@ Initialize a new project.
 | ------------ | ------------------------------------------------------------------------ |
 | `<text>`     | Set name of project. By default, parent directory is used.               |
 | `-c`         | Generate C project instead of C++ project                                |
+| `-W <int>`   | Default window width. Default = `800`                                    |
+| `-H <int>`   | Default window height. Default = `800`                                   |
+| `-F <int>`   | Default framerate. Default = `60`                                        |
+| `-f`         | Force initialization. Overwrites config if it already exists.            |
 | `-d`         | Dry run. Doesn't initialize but prints all commands it was going to run. |
 | `-h`         | Stops parsing flags and prints help for this mode.                       |
 
