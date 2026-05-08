@@ -3,7 +3,7 @@
 # Bootstrapper for Raylib Template Build System.
 
 PS4=' > '
-: "${BUILD_DIR:=./build}"
+: "${BUILD_DIR:=build}"
 
 log() {
     is_error=${2:-0}
@@ -56,10 +56,10 @@ if [ "$submodules_loaded" -eq 0 ]; then
         fi
     }
 
-    is_submodule_loaded "./extern/raylib" raylib_loaded
-    is_submodule_loaded "./extern/cb" cb_loaded
-    is_submodule_loaded "./extern/flagship" flagship_loaded
-    is_submodule_loaded "./extern/ini-parser" ini_parser_loaded
+    is_submodule_loaded "extern/raylib" raylib_loaded
+    is_submodule_loaded "extern/cb" cb_loaded
+    is_submodule_loaded "extern/flagship" flagship_loaded
+    is_submodule_loaded "extern/ini-parser" ini_parser_loaded
 
     if [ "$raylib_loaded" -eq 0 ] || [ "$cb_loaded" -eq 0 ] || [ "$flagship_loaded" -eq 0 ] || [ "$ini_parser_loaded" -eq 0 ]; then
         read -r -p "BOOTSTRAPPER: One or more submodules has not been initialized, would you like to load them? [Y/n] " response
