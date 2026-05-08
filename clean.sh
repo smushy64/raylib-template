@@ -3,10 +3,12 @@
 # Resets build system.
 # Does not affect project files except for generated sources.
 
-read -r -p "Are you sure you want to clean all build system files? [Y/n] " response
+if ! [ "$1" = "-y" ]; then
+    read -r -p "Are you sure you want to clean all build system files? [Y/n] " response
 
-if ! [[ -z "$response" || "$response" =~ ^[Yy]$ ]]; then
-    exit 0
+    if ! [[ -z "$response" || "$response" =~ ^[Yy]$ ]]; then
+        exit 0
+    fi
 fi
 
 PS4=' > '
