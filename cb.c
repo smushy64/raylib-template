@@ -97,7 +97,6 @@ enum RebuildTarget {
     REBUILD_ALL,
     REBUILD_RAYLIB,
     REBUILD_PROJECT,
-    REBUILD_VENDOR,
 
     REBUILD_COUNT,
     REBUILD_BEGIN = REBUILD_ALL
@@ -106,7 +105,6 @@ const char *REBUILD_NAMES[] = {
     "all",
     "raylib",
     "project",
-    "vendor"
 };
 static_assert(
     CB_ARRAY_LEN(REBUILD_NAMES) == REBUILD_COUNT,
