@@ -33,12 +33,13 @@ void Update(void) {
 
 int main(int argc, char **argv) {
     (void)argc, (void)argv;
-    InitWindow(800, 600, TextFormat("%s | version %s", PROJECT_NAME, PROJECT_VERSION));
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT,
+        TextFormat("%s | version %s", PROJECT_NAME, PROJECT_VERSION));
 
 #if PLATFORM == PLATFORM_WASM
     emscripten_set_main_loop(Update, 0, 1);
 #else
-    SetTargetFPS(60);
+    SetTargetFPS(FRAMERATE);
 
     while(!WindowShouldClose()) {
         Update();

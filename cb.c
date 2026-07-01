@@ -821,6 +821,30 @@ int mode_build_project(struct OptionBuild *opt) {
     cmd_add(&CMD, local_fmt("-DPROJECT_DEVELOPER=\"%s\"", developer()));
     cmd_add(&CMD, local_fmt("-DPROJECT_COMPILER=\"%s\"", compiler_cpp(opt->target)));
 
+    ini_parser_begin_section(&INI, "project");
+
+    int v;
+
+    v = ini_parser_read_integer(&INI, "window-width");
+    if(v < 100) {
+        v = 100;
+    }
+    cmd_add(&CMD, local_fmt("-DWINDOW_WIDTH=%d",v));
+
+    v = ini_parser_read_integer(&INI, "window-height");
+    if(v < 100) {
+        v = 100;
+    }
+    cmd_add(&CMD, local_fmt("-DWINDOW_HEIGHT=%d", v));
+
+    v = ini_parser_read_integer(&INI, "framerate");
+    if(v < 20) {
+        v = 20;
+    }
+    cmd_add(&CMD, local_fmt("-DFRAMERATE=%d", v));
+
+    ini_parser_end_section(&INI);
+
     for(enum Target t = T_BEGIN; t < T_COUNT; ++t) {
         if(t == T_NATIVE) {
             continue;
@@ -1938,6 +1962,24 @@ int ini_define(struct IniParserContext *ini) {
             ini_parser_end_field(ini);
         }
 
+        ini_parser_begin_field(ini, "window-width"); {
+            ini_parser_comment(ini, "initial width of window, minimum: 100");
+            ini_parser_value(ini, "800");
+            ini_parser_end_field(ini);
+        }
+
+        ini_parser_begin_field(ini, "window-height"); {
+            ini_parser_comment(ini, "initial height of window, minimum: 100");
+            ini_parser_value(ini, "600");
+            ini_parser_end_field(ini);
+        }
+
+        ini_parser_begin_field(ini, "framerate"); {
+            ini_parser_comment(ini, "minimum: 20");
+            ini_parser_value(ini, "60");
+            ini_parser_end_field(ini);
+        }
+
         ini_parser_end_section(ini);
     }
 
@@ -1963,10 +2005,12 @@ int ini_load(struct IniParserContext *ini) {
     const char *path = "config.ini";
 
     if(path_exists(path)) {
+        CB_INFO("loading %s . . .", path);
         if(!ini_parser_deserialize_file_path(ini, path)) {
             return error(E_FILE_OPEN, path);
         }
     } else {
+        CB_INFO("creating %s . . .", path);
         File project_ini;
         if(!file_open(path, FF_CREATE | FF_WRITE, &project_ini)) {
             return error(E_FILE_CREATE, path);
