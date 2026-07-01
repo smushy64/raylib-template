@@ -1,0 +1,15 @@
+-I../include
+-I../extern/raylib/src
+-I../extern/cb
+-I../extern/flagship
+-I../extern/ini-parser
+-DPROJECT_NAME="Raylib Project"
+-DPROJECT_VERSION="0.0.0"
+-DPROJECT_DEVELOPER="unknown"
+-DPROJECT_COMPILER="unknown"
+-DPLATFORM=0
+-DPLATFORM_LINUX=1
+-DPLATFORM_WINDOWS=2
+-DPLATFORM_MACOS=3
+-DPLATFORM_WASM=4
+
